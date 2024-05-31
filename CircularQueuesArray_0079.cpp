@@ -15,6 +15,6 @@ class Queues
 
     void insert()
     {
-        
+        int num;
     }
 };
