@@ -66,4 +66,29 @@ class Queues
 			else FRONT = FRONT + 1;
 		}
     }
+
+    void display()
+    {
+        int FRONT_position = FRONT;
+        int REAR_position = REAR;
+
+        // cek apakah antrian kosong?
+        if (FRONT == -1)
+        {
+            cout << "Queue is empty\n";
+            return;
+        }
+        cout << "\nElements in the queue are...\n";
+
+        //jika FRONT_position <= REAR_position, iterasi dari front hingga rear
+        if (FRONT_position <= max - 1)
+        {
+			while (FRONT_position <= REAR_position)
+            {
+				cout << queue_array[REAR_position] << "   S";
+				FRONT_position++;
+            }
+            cout << endl;
+        }    
+    }
 };
