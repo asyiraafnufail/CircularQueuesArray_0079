@@ -80,15 +80,34 @@ class Queues
         }
         cout << "\nElements in the queue are...\n";
 
-        //jika FRONT_position <= REAR_position, iterasi dari front hingga rear
+        // jika FRONT_position <= REAR_position, iterasi dari front hingga rear
         if (FRONT_position <= max - 1)
         {
 			while (FRONT_position <= REAR_position)
             {
-				cout << queue_array[REAR_position] << "   S";
+				cout << queue_array[REAR_position] << "   ";
 				FRONT_position++;
             }
             cout << endl;
-        }    
+        }
+        // jika FRONT_position > REAR_position, iterasi dari front hingga akhir array
+        else
+        {
+            while (FRONT_position <= max - 1)
+            {
+                cout << queue_array[FRONT_position] << "   ";
+                FRONT_position++;
+            }
+
+            FRONT_position = 0;
+
+            // Iterasi dari awal array hingga rear
+            while (FRONT_position <= REAR_position)
+            {
+                cout << queue_array[FRONT_position] << "   ";
+                FRONT_position++;
+            }
+            cout << endl;
+        }
     }
 };
